@@ -2,7 +2,7 @@
   "name": "entice-clothing",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "nodemon app.js"
   },
@@ -23,6 +23,7 @@
     "uuid": "^10.0.0"
   },
   "devDependencies": {
+    "gh-pages": "^6.2.0",
     "nodemon": "^3.1.4"
   }
 }
