@@ -1,23 +1,25 @@
-const mongodb = require('mongodb');
+const mongodb = require("mongodb");
+require("dotenv").config();
 
 const MongoClient = mongodb.MongoClient;
 
 let database;
+const URI_KEY = process.env.URI_KEY;
 
 async function connectToDatabase() {
-    const client = await MongoClient.connect('mongodb+srv://girdhargautam6:G%40ut%40m%4010122004@cluster0.7kyh0h0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
-    database = client.db('online-shop');
+  const client = await MongoClient.connect(URI_KEY);
+  database = client.db("online-shop");
 }
 
 function getDb() {
-    if (!database) {
-        throw new Error('you must connect first!');    
-    }
+  if (!database) {
+    throw new Error("you must connect first!");
+  }
 
-    return database;
+  return database;
 }
 
 module.exports = {
-    connectToDatabase: connectToDatabase,
-    getDb: getDb
-}
+  connectToDatabase: connectToDatabase,
+  getDb: getDb,
+};
